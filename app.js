@@ -20,7 +20,8 @@ next();
 });
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/Comment');
+var commentRouter = require('./routes/Comment');
+var reviewRouter = require('./routes/Review');
 
 // view engine setup
 //app.set('views', path.join(__dirname, 'views'));
@@ -37,7 +38,8 @@ Mongoose.connect('mongodb://lucia:Neilifeoma1@ds255332.mlab.com:55332/lucia', { 
 //Mongoose.connect('mongodb://localhost:27017/Plicit', { useNewUrlParser: true });
 
 app.use('/', indexRouter);
-app.use('/comments', usersRouter);
+app.use('/comments', commentRouter);
+app.use('/reviews', reviewRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next)=>{
